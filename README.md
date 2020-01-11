@@ -6,7 +6,7 @@
 命令：  
 `$ base=https://github.com/docker/machine/releases/download/v0.16.0 &&  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine`  
 `docker-machine version`验证版本  
-![运行结果1]（https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%871.png）  
+![运行结果1](https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%871.png)  
 
 2. 安装`virtual box`  
 官网下载压缩包  
@@ -25,7 +25,7 @@
 `docker swarm init --advertise-addr 192.168.99.100`  
 此时`worker1`已经成为了`swarm`集群管理节点。  
 在管理节点界面运行`docker node ls`可查看该`swarm`集群所有节点  
-![运行结果2]（https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%872.png）  
+![运行结果2](https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%872.png)  
 接着继续创建节点并将他们作为工作节点加入`swarm`集群：  
 `$ docker-machine create -d virtualbox worker2`  
 `$ docker-machine create -d virtualbox worker3`  
@@ -36,7 +36,7 @@
 其余几个节点按照上面两个命令加入集群  
 此时`swarm`集群就创建完成了。  
 重开终端连入管理节点：`docker-machine start worker1`  
-![运行结果3]（https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%873.png）  
+![运行结果3](https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%873.png)  
 系统会提示执行命令：`docker-machine env worker1`  
-![运行结果4]（https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%874.png）  
+![运行结果4](https://github.com/Silence1017/docker-swarm/blob/master/%E5%9B%BE%E7%89%874.png)  
 再执行`eval $(docker-machine env worker1)`，则`worker1`节点成功开启。  
